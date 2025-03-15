@@ -33,6 +33,6 @@
   },
 
   "postCreateCommand": "chmod +x $(pwd)/.devcontainer/postCreateScript.sh && $(pwd)/.devcontainer/postCreateScript.sh",
-
+  "workspaceMount": "source=${localWorkspaceFolder},target=/miktex/work,type=bind",
   "workspaceFolder": "/miktex/work"
 }
