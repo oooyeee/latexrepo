@@ -197,6 +197,8 @@ RUN mpm --admin --install=parskip && \
     mpm --admin --install=zapfding && \
     mpm --admin --install=zref
     
+# RUN apt update && apt install git
+
 # Set the working directory
 WORKDIR /miktex/work
 
