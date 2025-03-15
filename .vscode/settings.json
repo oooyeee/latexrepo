@@ -1,0 +1,61 @@
+{
+    "latex-workshop.latex.tools": [
+        {
+            "name": "texify",
+            "command": "texify",
+            "args": [
+                "--batch",
+                "--quiet",
+                "--pdf",
+                "--synctex=1",
+                // "-V",
+                "--engine=xetex",
+                "%DOC%.tex",
+            ],
+            "env": {}
+            
+        },
+        {
+            "name":"latexmk",
+            "command": "latexmk",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "-pdf",
+                "-xelatex",
+                "%DOC%.tex"
+            ],
+        },
+        {
+            "name":"latexmk-clean-all",
+            "command": "latexmk",
+            "args": [
+                "-CA",
+                "-xelatex",
+                "%DOC%.tex"
+            ],
+        }
+    ],
+
+    "latex-workshop.latex.recipes": [
+        {
+            "name": "texify",
+            "tools": [
+                "texify",
+            ],
+        },
+        {
+            "name": "latexmk",
+            "tools": [
+                "latexmk",
+            ],
+        },
+        {
+            "name": "latexmk-clean-all",
+            "tools": [
+                "latexmk-clean-all",
+            ],
+        },
+    ]
+}

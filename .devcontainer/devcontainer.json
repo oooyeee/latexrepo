@@ -1,0 +1,38 @@
+// For format details, see https://aka.ms/devcontainer.json.
+{
+  "name": "LaTeX Dev Container",
+  "mounts": [
+    "source=${localWorkspaceFolder}/.packages,target=/var/lib/miktex,type=bind",
+    "source=${localWorkspaceFolder},target=/miktex/work,type=bind"
+  ],
+  "build": {
+    // Path is relative to the devcontainer.json file.
+    "dockerfile": "Dockerfile"
+  },
+
+  // Features to add to the dev container. More info: https://containers.dev/features.
+  // "features": {},
+
+  // Use 'forwardPorts' to make a list of ports inside the container available locally.
+  // "forwardPorts": [],
+
+  // Configure tool-specific properties.
+  // "customizations": {},
+
+  // Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+  "remoteUser": "root",
+
+  "customizations": {
+    "extensions": [
+      "James-Yu.latex-workshop",
+      "LuisFernando.canvas-obsidian-vscode",
+      "foam.foam-vscode",
+      "GitHub.copilot",
+      "valentjn.vscode-ltex"
+    ]
+  },
+
+  "postCreateCommand": "chmod +x $(pwd)/.devcontainer/postCreateScript.sh && $(pwd)/.devcontainer/postCreateScript.sh",
+
+  "workspaceFolder": "/miktex/work"
+}

@@ -1,0 +1,39 @@
+{
+	"version":"1.0",
+	"nodes":[
+		{"id":"d0521fc79eed6cb2","type":"text","text":"Avoid Creating notes on canvas (or creating MD files) in VSCode, DATA WILL BE MISSING !","x":-125,"y":-29,"width":545,"height":150},
+		{"id":"264925d6fbd56093","type":"text","text":"Dont open both VSCode and Obsidian while editing canvas, DATA WILL BE MISSING","x":-880,"y":-30,"width":460,"height":110},
+		{"id":"d0c72134c47696cd","type":"text","text":"Only view in VSCode, edit in Obsidian","x":-500,"y":220,"width":307,"height":120}
+	],
+	"edges":[
+		{
+			"id":"f75ad94daf69ee88",
+			"style":{"strokeWidth":2,"stroke":"var(--vscode-button-background)"},
+			"markerEnd":true,
+			"fromNode":"264925d6fbd56093",
+			"fromSide":"right",
+			"toNode":"d0521fc79eed6cb2",
+			"toSide":"left"
+		},
+		{
+			"id":"7a7ae08af8887fd9",
+			"style":{"strokeWidth":2,"stroke":"var(--vscode-button-background)"},
+			"markerEnd":true,
+			"fromNode":"d0521fc79eed6cb2",
+			"fromSide":"bottom",
+			"toNode":"d0c72134c47696cd",
+			"toSide":"top"
+		},
+		{
+			"id":"6feb045f18b6e0ce",
+			"style":{"strokeWidth":2,"stroke":"var(--vscode-button-background)"},
+			"markerEnd":true,
+			"fromNode":"d0c72134c47696cd",
+			"fromSide":"bottom",
+			"toNode":"264925d6fbd56093",
+			"toSide":"top"
+		}
+	],
+	"viewport":{"x":1091.7084492359604,"y":285.82051641093483,"zoom":1.1111390826070537},
+	"metadata":{"lastModified":"2025-03-15T12:47:30.752Z","appVersion":"1.0.0"}
+}
