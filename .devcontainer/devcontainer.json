@@ -2,8 +2,7 @@
 {
   "name": "LaTeX Dev Container",
   "mounts": [
-    "source=${localWorkspaceFolder}/.packages,target=/var/lib/miktex,type=bind",
-    "source=${localWorkspaceFolder},target=/miktex/work,type=bind"
+    "source=${localWorkspaceFolder}/.packages,target=/var/lib/miktex,type=bind"
   ],
   "build": {
     // Path is relative to the devcontainer.json file.
