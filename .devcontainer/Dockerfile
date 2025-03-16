@@ -20,6 +20,8 @@ RUN miktexsetup finish && \
     mpm --admin --install=xetex && \
     mpm --admin --install=xetex-pstricks
 
+RUN mpm --admin --install=tikz
+
 # split install to multiple runs
 RUN mpm --admin --install=algorithms && \
     mpm --admin --install=amscls && \
@@ -203,14 +205,29 @@ RUN mpm --admin --install=parskip && \
 RUN mpm --admin --install=fontenc && \
     mpm --admin --install=inputenc && \
     mpm --admin --install=babel-french && \
-    mpm --admin --install=tikz-uml && \
     mpm --admin --install=fullpage && \
-    mpm --admin --install=pgl-umlcd && \
-    mpm --admin --install=pgl-umlsd && \
+    mpm --admin --install=pgf-umlcd && \
+    mpm --admin --install=pgf-umlsd && \
     mpm --admin --install=plantuml && \
     mpm --admin --install=uml && \
     mpm --admin --install=metauml
+
+# this package is added manually in .packages
+# mpm --admin --install=tikz-uml && \
     
+RUN mpm --admin --install=ifthen && \
+    mpm --admin --install=xstring && \
+    mpm --admin --install=calc && \
+    mpm --admin --install=pgfopts && \
+    mpm --admin --install=mathpazo && \
+    mpm --admin --install=savetrees
+
+RUN mpm --admin --install=memoir && \
+    mpm --admin --install=xpatch && \
+    mpm --admin --install=bootabs && \
+    mpm --admin --install=textcase && \
+
+
 # Update packages and install git
 RUN apt-get update && apt-get install -y \
     wget \
@@ -218,6 +235,9 @@ RUN apt-get update && apt-get install -y \
     git \
     vim \
     && rm -rf /var/lib/apt/lists/*
+
+RUN initexmf --admin --user-roots=/miktex/work/.packages/ && \
+    initexmf --admin --update-fndb
 
 # Set the working directory
 WORKDIR /miktex/work

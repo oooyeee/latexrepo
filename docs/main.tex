@@ -1,16 +1,25 @@
 
-\documentclass{article}
+\documentclass[12pt,article]{memoir}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{mathpazo}
+\linespread{1.05}
+\usepackage{tikz}
 
-% For generating Lorem Ipsum text
-\usepackage{lipsum} 
 
-\title{Simple Sample}
-\author{My Name}
-\date{\today}
+\usepackage{tikz-uml}
 
+\usepackage{amsmath}
+\usepackage{lipsum}
 
 \begin{document}
-\maketitle 
+
+\begin{tikzpicture}
+\begin{umlsystem}[x=0, y=0]{Name of system} 
+% Code from official documentation goes here...
+\end{umlsystem}
+% And here
+\end{tikzpicture}
 
 \section{Hello World!} 
 
