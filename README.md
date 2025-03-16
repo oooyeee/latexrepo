@@ -24,9 +24,6 @@ latexmk -CA -xelatex main.tex
 
 ## notes Obsidian or in VScode
 
-* __DONT__ add or edit canvas files in vscode (buggy)
-* __DONT__ open both VSCode and OBsidian while editing canvas files (buggy)
-* __DO__ edit canvas files in OBsidian
-* __DO__ look at canvas files without editing in VSCode
-
-> creating or editing .md files is fine in VSCode or Obsidian
+* work with canvas files in Obsidian
+* editing note files in VSCode is fine
+* foam extension in VSCode provides usefull graph view
