@@ -1,5 +1,8 @@
 FROM miktex/miktex:basic
 
+# Set environment variables to avoid interactive prompts
+ENV DEBIAN_FRONTEND=noninteractive
+
 # Update MiKTeX and install necessary packages
 RUN miktexsetup finish && \
     initexmf --admin --update-fndb && \
@@ -196,8 +199,25 @@ RUN mpm --admin --install=parskip && \
     mpm --admin --install=zapfchan && \
     mpm --admin --install=zapfding && \
     mpm --admin --install=zref
+
+RUN mpm --admin --install=fontenc && \
+    mpm --admin --install=inputenc && \
+    mpm --admin --install=babel-french && \
+    mpm --admin --install=tikz-uml && \
+    mpm --admin --install=fullpage && \
+    mpm --admin --install=pgl-umlcd && \
+    mpm --admin --install=pgl-umlsd && \
+    mpm --admin --install=plantuml && \
+    mpm --admin --install=uml && \
+    mpm --admin --install=metauml
     
-# RUN apt update && apt install git
+# Update packages and install git
+RUN apt-get update && apt-get install -y \
+    wget \
+    curl \
+    git \
+    vim \
+    && rm -rf /var/lib/apt/lists/*
 
 # Set the working directory
 WORKDIR /miktex/work
