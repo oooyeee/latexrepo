@@ -225,7 +225,7 @@ RUN mpm --admin --install=ifthen && \
 RUN mpm --admin --install=memoir && \
     mpm --admin --install=xpatch && \
     mpm --admin --install=bootabs && \
-    mpm --admin --install=textcase && \
+    mpm --admin --install=textcase
 
 
 # Update packages and install git
@@ -234,6 +234,7 @@ RUN apt-get update && apt-get install -y \
     curl \
     git \
     vim \
+    dos2unix \
     && rm -rf /var/lib/apt/lists/*
 
 RUN initexmf --admin --user-roots=/miktex/work/.packages/ && \
